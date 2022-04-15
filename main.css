@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+body,
+html{
+    background: #D90C43;
+}
+.btn-open-poput{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #D90C43;
+    display: block;
+    background: white;
+    padding: 20px 50px;
+    border-radius: 50px;
+}
+.conteiner-all{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 40px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 600ms;
+}
+.conteiner-all:target{
+    background: rgba(0, 0, 0, 0.8);
+    visibility: visible;
+    opacity: 1;
+}
+
+.conteiner-all:target .popup{
+    top: 50%;
+    left: 50%;
+    transform: rotate(0deg) translate(-50%, -50%);
+    visibility: visible;
+}
+.popup{
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    visibility: hidden;
+    background: white;
+    top: -80%;
+    left: -80%;
+    transform: rotate(90deg) translate(-150%, 230%);
+    transition: all 800ms;
+}
+.img{
+    width: 40%;
+    background-image: url(./img/My\ project.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+.conteiner-text{
+    width: 60%;
+    padding: 50px;
+    overflow-y: auto;
+}
+.conteiner-text h1{
+    font-size: 30px;
+}
+.conteiner-text p{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.btn-close-popup{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    padding: 20px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    line-height: 10px;
+}
+@media screen and (max-width: 900px) {
+    .popup{
+        flex-direction: column;
+        height: 100%;
+        width: 40%;
+    }
+    .img{
+        width: 100%;
+        height: 40%;
+
+}
+    .conteiner-text{
+        width: 100%;
+        height: 60%;
+        padding: 80px;
+    }
+   .conteiner-text h1{
+       font-size: 20px;
+   } 
+   .conteiner-text p{
+       font-size: 10px;
+   }
+}
+@media screen and (max-width: 500px) {
+.conteiner-text{
+    padding: 20px;
+    }
+
+    .conteiner-text h1{
+        font-size: 20px;
+    } 
+    .conteiner-text p{
+        font-size: 10px;
+    }
+}
